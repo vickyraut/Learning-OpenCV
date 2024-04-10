@@ -1,9 +1,13 @@
 import cv2
 
-cap=cv2.VideoCapture("../Videos/2.mp4")
+cap=cv2.VideoCapture(0)
+cap.set(3, 640) # 3 = Width id
+cap.set(4, 480) # 4 = weight id
 
+cap.set(10, 150) # 10 = brightness id
 while True:
     success, frame = cap.read()
+    print("Frame", frame.shape)
     if success:
         cv2.imshow("Output", frame)
 
